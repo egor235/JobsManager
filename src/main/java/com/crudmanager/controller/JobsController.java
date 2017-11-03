@@ -10,30 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 
-/*
-2. Методы веб-службы
 
-
-PUT /vacancy
-
-Создание новой вакансии
-
-GET /vacancy
-
-Список вакансий отсортированных по наименованию
-
-
-GET /vacancy/{id}
-
-Вакансия с ID {id}
-
-
-DELETE /vacancy/{id}
-
-удаление вакансии с ID {id}
-
-4. Формат данных
-При взаимодействии с веб-службой данные передаются в XML формате.*/
 @RestController
 @RequestMapping(value = "/vacancy")
 public class JobsController {
@@ -69,5 +46,5 @@ public class JobsController {
 			produces = {MediaType.APPLICATION_XML_VALUE })
 	public void deleteJob(@PathVariable("id") Long id) {
 		jobsservice.deleteById(id);
-			}
+	}
 }
